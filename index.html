@@ -121,7 +121,7 @@
 </div>
 
 <script>
-    // Функция расчёта славы (рабочая)
+    // расчёт славы
     function getFame(damage, level, bonusPercent = 0) {
         const divisor = 6 * level + 6;
         const baseFame = Math.round(damage / divisor);
@@ -129,13 +129,13 @@
         return fameWithBonus;
     }
 
-    // Функция для отображения результата в интерфейсе
+    // отображение результата в интерфейсе
     function calculateFame() {
         const damage = parseFloat(document.getElementById('damage').value);
         const level = parseInt(document.getElementById('level').value);
         const bonus = parseFloat(document.getElementById('bonus').value);
 
-        // Проверяем, что введены корректные числа
+        // Проверка, что введены корректные числа
         if (isNaN(damage) || isNaN(level) || isNaN(bonus)) {
             document.getElementById('fameResult').innerText = 'Ошибка';
             return;
